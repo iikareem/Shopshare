@@ -1,0 +1,30 @@
+
+<% if (products.length > 0) { for(var i=0; i < products.length; i++) { %>
+
+<div class="col-md-3">
+
+                <div class="wsk-cp-product">
+                  <div class="wsk-cp-img">
+                    <img src="<%= products[i].IMAGE_LABEL %>" alt="Product" class="img-responsive" />
+                  </div>
+                  <div class="wsk-cp-text">
+                    <div class="category">
+                      <span><%= products[i].Brand %></span>
+                    </div>
+                    <div class="title-product">
+                      <h3><%= products[i].Ad_Title %></h3>
+                    </div>
+                    <div class="description-prod">
+                      <p><%= products[i].Description %></p>
+                    </div>
+                    <div class="card-footer">
+                      <div class="wcf-left"><span class="price">E£<%=products[i].Product_Price%></span></div>
+                      <div class="wcf-right"><a href="/Product_Detail/<%=products[i]._id%>" class="buy-btn"><i class="zmdi zmdi-shopping-basket"></i></a></div>
+                    </div>
+                  </div>
+                </div>
+
+
+ </div>
+
+<%  }}   %>
