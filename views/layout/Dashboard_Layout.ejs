@@ -11,13 +11,13 @@
     <meta name="description"
           content="Ample Admin Lite is powerful and clean admin dashboard template, inpired from Bootstrap Framework">
     <meta name="robots" content="noindex,nofollow">
-    <title>Ample Admin Lite Template by WrapPixel</title>
+    <title>Dashboard Admin</title>
     <link rel="canonical" href="https://www.wrappixel.com/templates/ample-admin-lite/" />
     <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="plugins/images/favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="Dashboard/plugins/images/favicon.png">
     <!-- Custom CSS -->
-    <link href="plugins/bower_components/chartist/dist/chartist.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="plugins/bower_components/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.css">
+    <link href="Dashboard/plugins/bower_components/chartist/dist/chartist.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="Dashboard/plugins/bower_components/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.css">
     <!-- Custom CSS -->
     <link href="css/style.min.css" rel="stylesheet">
 </head>
@@ -56,7 +56,7 @@
                     <!-- Logo text -->
                     <span class="logo-text">
                             <!-- dark Logo text -->
-                            <img src="plugins/images/logo-text.png" alt="homepage" />
+                            <h4 style="color: #000000; margin-top: 15px; font-weight: bold"> DASHBOARD</h4>
                         </span>
                 </a>
                 <!-- ============================================================== -->
@@ -94,7 +94,7 @@
                     <!-- ============================================================== -->
                     <li>
                         <a class="profile-pic" href="#">
-                            <img src="plugins/images/users/varun.jpg" alt="user-img" width="36"
+                            <img src="plugins/images/users/1.jpg" alt="user-img" width="36"
                                  class="img-circle"><span class="text-white font-medium">Kareem</span></a>
                     </li>
                     <!-- ============================================================== -->
@@ -176,6 +176,24 @@
                         <ol class="breadcrumb ms-auto">
                             <li><a href="#" class="fw-normal">Dashboard</a></li>
                         </ol>
+                        <% if (Dashboard === "MainDashboard")  { %>
+
+                        <a href="http://127.0.0.1:5000/Add_Product" target="_blank"
+                           class="btn btn-danger  d-none d-md-block pull-right ms-3 hidden-xs hidden-sm waves-effect waves-light text-white">Add New Product</a>
+
+                        <%  } else if (Dashboard === "ProfileDashboard") { %>
+                            <a href="http://127.0.0.1:5000/Add_Product" target="_blank"
+                               class="btn btn-danger  d-none d-md-block pull-right ms-3 hidden-xs hidden-sm waves-effect waves-light text-white">Profile</a>
+
+
+                        <%   } else if (Dashboard==="Users") { %>
+
+                            <a href="http://127.0.0.1:5000/Add_Product" target="_blank"
+                               class="btn btn-danger  d-none d-md-block pull-right ms-3 hidden-xs hidden-sm waves-effect waves-light text-white">Add New User</a>
+
+                        <%   } else { %>
+
+                        <%    }  %>
 
                     </div>
                 </div>
@@ -195,8 +213,7 @@
         <!-- ============================================================== -->
         <!-- footer -->
         <!-- ============================================================== -->
-        <footer class="footer text-center"> 2021 © Ample Admin brought to you by <a
-                    href="https://www.wrappixel.com/">wrappixel.com</a>
+        <footer class="footer text-center"> 2023 © E-commerce
         </footer>
         <!-- ============================================================== -->
         <!-- End footer -->

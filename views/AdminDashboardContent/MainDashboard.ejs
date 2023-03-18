@@ -6,21 +6,21 @@
                     <div class="col-lg-4 col-md-12">
                         <div class="white-box analytics-info">
                             <h3 class="box-title">Total Products</h3>
-                            <h3 style="color: blue";>177</h3>
+                            <h2 style="color: blue; font-weight: bold";><%=NumOfProducts%></h2>
 
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-12">
                         <div class="white-box analytics-info">
                             <h3 class="box-title">Total Users</h3>
-                            <h3 style="color: blue";>19</h3>
+                            <h2 style="color: blue; font-weight: bold";>128</h2>
 
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-12">
                         <div class="white-box analytics-info">
                             <h3 class="box-title">Total Admins</h3>
-                            <h3 style="color: blue";>3</h3>
+                            <h2 style="color: blue; font-weight: bold";>3</h2>
 
                         </div>
                     </div>
@@ -41,6 +41,7 @@
 
                                 </div>
                             </div>
+
                             <div class="table-responsive">
                                 <table class="table no-wrap">
                                     <thead>
@@ -56,82 +57,27 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td>1</td>
-                                            <td class="txt-oflo">Elite admin</td>
-                                            <td class="txt-oflo">iikareem</td>
-                                            <td>1552109303</td>
 
-                                            <td class="txt-oflo">April 18, 2021</td>
-                                            <td><span style="color:rgb(60, 230, 97)">$24</span></td>
-                                            <td><button>Delete</button></td>
+                                    <% if (Products.length > 0) { for(var i=0; i < Products.length; i++) { %>
+
+                                    <tr>
+                                            <td><%=i+1%></td>
+                                            <td style="font-weight: bold" class="txt-oflo"><%=Products[i].Ad_Title%></td>
+                                            <td class="txt-oflo"><%=Products[i].user%></td>
+                                            <td>+20 <%=Products[i].Phone%></td>
+
+                                            <td class="txt-oflo"><%=Products[i].createdAt%></td>
+                                            <td><span  style="color:rgb(60, 230, 97); font-weight: bold">E£<%=Products[i].Product_Price%></span></td>
+                                            <td>
+                                                <a  class="btn btn-danger  d-none d-md-block pull-right ms-3 hidden-xs hidden-sm waves-effect waves-light text-white"
+                                                    href="Delete/<%=Products[i]._id%>">
+                                                    Delete
+
+                                                </a>
+                                            </td>
                                         </tr>
-                                        <tr>
-                                            <td>2</td>
-                                            <td class="txt-oflo">Real Homes WP Theme</td>
-                                            <td class="txt-oflo">user</td>
-                                            <td>1552109303</td>
 
-                                           <td class="txt-oflo">April 19, 2021</td>
-                                           <td><span style="color:rgb(60, 230, 97)">$24</span></td>
-                                           <td><button>Delete</button></td>
-
-                                        </tr>
-                                        <tr>
-                                            <td>3</td>
-                                            <td class="txt-oflo">Ample Admin</td>
-                                            <td class="txt-oflo">user</td>
-                                            <td>1552109303</td>
-
-                                            <td class="txt-oflo">April 19, 2021</td>
-                                            <td><span style="color:rgb(60, 230, 97)">$24</span></td>
-                                            <td><button>Delete</button></td>
-
-                                        </tr>
-                                        <tr>
-                                            <td>4</td>
-                                            <td class="txt-oflo">Medical Pro WP Theme</td>
-                                            <td class="txt-oflo">user</td>
-                                            <td>1552109303</td>
-
-                                            <td class="txt-oflo">April 20, 2021</td>
-                                            <td><span style="color:rgb(60, 230, 97)">$24</span></td>
-                                            <td><button>Delete</button></td>
-
-                                        </tr>
-                                        <tr>
-                                            <td>5</td>
-                                            <td class="txt-oflo">Hosting press html</td>
-                                            <td class="txt-oflo">user</td>
-                                            <td>1552109303</td>
-
-                                            <td class="txt-oflo">April 21, 2021</td>
-                                            <td><span style="color:rgb(60, 230, 97)">$24</span></td>
-                                            <td><button>Delete</button></td>
-
-                                        </tr>
-                                        <tr>
-                                            <td>6</td>
-                                            <td class="txt-oflo">Digital Agency PSD</td>
-                                            <td class="txt-oflo">user</td>
-                                            <td>1552109303</td>
-
-                                            <td class="txt-oflo">April 23, 2021</td>
-                                            <td><span style="color:rgb(60, 230, 97)">$24</span></td>
-                                            <td><button>Delete</button></td>
-
-                                        </tr>
-                                        <tr>
-                                            <td>7</td>
-                                            <td class="txt-oflo">Helping Hands WP Theme</td>
-                                            <td class="txt-oflo">user</td>
-                                            <td>1552109303</td>
-
-                                            <td class="txt-oflo">April 22, 2021</td>
-                                            <td><span style="color:rgb(60, 230, 97)">$24</span></td>
-                                            <td><button>Delete</button></td>
-
-                                        </tr>
+                                    <%  }}   %>
 
                                     </tbody>
                                 </table>
