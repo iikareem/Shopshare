@@ -197,3 +197,28 @@ a.buy-btn{
   color: #fff;
 }
 }
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  margin-left: 130px;
+}
+
+.page-link {
+  padding: 8px 12px;
+  margin: 0 4px;
+  color: #fff;
+  background-color: #000;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+.page-link:hover {
+  background-color: #333;
+}
+
+.page-link.current {
+  background-color: #fff;
+  color: #000;
+}

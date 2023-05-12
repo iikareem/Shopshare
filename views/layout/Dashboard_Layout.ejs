@@ -95,7 +95,7 @@
                     <li>
                         <a class="profile-pic" href="#">
                             <img src="plugins/images/users/1.jpg" alt="user-img" width="36"
-                                 class="img-circle"><span class="text-white font-medium">Kareem</span></a>
+                                 class="img-circle"><span class="text-white font-medium">User</span></a>
                     </li>
                     <!-- ============================================================== -->
                     <!-- User profile and search -->
@@ -178,17 +178,17 @@
                         </ol>
                         <% if (Dashboard === "MainDashboard")  { %>
 
-                        <a href="http://127.0.0.1:5000/Add_Product" target="_blank"
+                        <a href="/Add_Product" target="_blank"
                            class="btn btn-danger  d-none d-md-block pull-right ms-3 hidden-xs hidden-sm waves-effect waves-light text-white">Add New Product</a>
 
                         <%  } else if (Dashboard === "ProfileDashboard") { %>
-                            <a href="http://127.0.0.1:5000/Add_Product" target="_blank"
+                            <a href="/Add_Product" target="_blank"
                                class="btn btn-danger  d-none d-md-block pull-right ms-3 hidden-xs hidden-sm waves-effect waves-light text-white">Profile</a>
 
 
                         <%   } else if (Dashboard==="Users") { %>
 
-                            <a href="http://127.0.0.1:5000/Add_Product" target="_blank"
+                            <a href="/Add_Product" target="_blank"
                                class="btn btn-danger  d-none d-md-block pull-right ms-3 hidden-xs hidden-sm waves-effect waves-light text-white">Add New User</a>
 
                         <%   } else { %>

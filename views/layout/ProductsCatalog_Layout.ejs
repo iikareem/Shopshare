@@ -11,6 +11,24 @@
 
     <title>Products</title>
 
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+        .box-container {
+            background-color: #f8f8f8;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            margin-left: 100px;
+        }
+
+        h1 {
+            font-size: 22px;
+            color: #333;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+        }
+    </style>
 </head>
 <body>
 
@@ -19,8 +37,8 @@
     <div id="sidebar-wrapper">
         <ul class="sidebar-nav">
             <li class="sidebar-brand">
-                <a href="#">
-                    Categories
+                <a href="/home">
+                    Home
                 </a>
             </li>
             <li>
@@ -42,7 +60,7 @@
                 <a href="/catalog/Laptops">Laptops</a>
             </li>
             <li>
-                <a href="/catalog/Pets">Pets - Accessories</a>
+                <a href="/catalog/Pets">Accessories</a>
             </li>
             <li>
                 <a href="/catalog/Vehicles">Vehicles</a>
@@ -51,35 +69,46 @@
                 <a href="/catalog/Others">Others</a>
             </li>
             <hr>
-            <button class="btn btn-danger" style="margin-left: 40px" onclick="document.location='/Add_Product'">+ Add New Product</button>
+            <button class="btn btn-danger" style="margin-left: 40px" onclick="document.location='/Add-Product'">+ Add New Product</button>
 
         </ul>
     </div>
 </div>
 
 
-    <div class="container text-center">
-        <h1>All Products</h1>
-
-        </div>
+<div class="container text-center">
+    <div class="box-container">
+        <h1>Have fun shopping today, <%=FirstName%></h1>
+    </div>
+</div>
         <div class="shell">
           <div class="container">
             <div class="row">
-
 
             <%- body %>
 
 
 
-
                </div>
-
-
 
           </div>
         </div>
 
+<div class="pagination">
+    <a href="/catalog?page=1" class="page-link">1</a>
+    <a href="/catalog?page=2" class="page-link">2</a>
+    <a href="/catalog?page=3" class="page-link">3</a>
+    <a href="/catalog?page=4" class="page-link">4</a>
+    <a href="/catalog?page=5" class="page-link">5</a>
+    <a href="/catalog?page=6" class="page-link">6</a>
+    <a href="/catalog?page=7" class="page-link">7</a>
+    <a href="/catalog?page=8" class="page-link">8</a>
+    <a href="/catalog?page=9" class="page-link">9</a>
+    <a href="/catalog?page=10" class="page-link">10</a>
+    <a href="/catalog?page=11" class="page-link">11</a>
+    <a href="/catalog?page=12" class="page-link">12</a>
+</div>
 
 </body>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
 </html>

@@ -1,0 +1,148 @@
+<div class="page-wrapper bg-gra-03 p-t-45 p-b-50">
+    <div class="wrapper wrapper--w790">
+        <div class="card card-5">
+            <div class="card-heading">
+                <h2 class="title">Add New Product</h2>
+            </div>
+            <div class="card-body">
+                <form action="/Add-Product/add"  method="POST">
+                    <div class="form-row">
+                        <div class="name">Ad title</div>
+                        <div class="value">
+                            <div class="input-group">
+                                <input class="input--style-5" type="text" name="Ad_Title" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="name">Brand</div>
+                        <div class="value">
+                            <div class="input-group">
+                                <input class="input--style-5" type="text" name="Brand" required>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="form-row" >
+                        <div class="name">Category</div>
+                        <div class="value">
+                            <div class="input-group">
+                                <select style="width: 100%; height: 30px"  class="input--style-5" id="cars" name="Category">
+                                    <option selected value="" disabled selected>Select Category</option>
+                                    <option value="Mobile Phones">Mobile Phones</option>
+                                    <option value="Home Furniture">Home Furniture</option>
+                                    <option value="Electronics">Electronics</option>
+                                    <option value="Fashion">Fashion & Beauty</option>
+                                    <option value="Laptops">Laptops</option>
+                                    <option value="Pets">Pets</option>
+                                    <option value="Vehicles">Vehicles</option>
+                                    <option value="Others">Others</option>
+
+
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+                    <div class="form-row">
+                        <div class="name">Description</div>
+                        <div class="value">
+                            <div class="input-group">
+                                <textarea style="height: 120px; width: 100%; line-height: 20px; padding-top: 10px" class="input--style-5" name="Description" type="text" required></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="name">Specifications</div>
+                        <div class="value">
+                            <div class="input-group">
+                                <textarea style="height: 120px; width: 100%; line-height: 20px; padding-top: 10px" class="input--style-5" name="Specifications" type="text" required></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="name">Image Label</div>
+                        <div class="value">
+                            <div class="input-group">
+                                <input class="input--style-5" type="text" name="IMAGE_LABEL" required >
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="name">Image URL 1</div>
+                        <div class="value">
+                            <div class="input-group">
+                                <input class="input--style-5" type="text" name="IMAGES_Slide1" required >
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="name">Image URL 2</div>
+                        <div class="value">
+                            <div class="input-group">
+                                <input class="input--style-5" type="text" name="IMAGES_Slide2"  >
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="name">Image URL 3</div>
+                        <div class="value">
+                            <div class="input-group">
+                                <input class="input--style-5" type="text" name="IMAGES_Slide3"  >
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row m-b-55">
+                        <div class="name">Product Price</div>
+                        <div class="value">
+                            <div class="row row-refine">
+                                <div class="col-3">
+                                    <div class="input-group-desc">
+                                        <input class="input--style-5" type="number" name="Product_Price" required>
+                                        <label class="label--desc">E£</label>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="form-row m-b-55">
+                        <div class="name">Phone</div>
+                        <div class="value">
+                            <div class="row row-refine">
+                                <div class="col-3">
+                                    <div class="input-group-desc">
+                                        <input class="input--style-5" type="text" name="area_code">
+                                        <label class="label--desc">Area Code</label>
+                                    </div>
+                                </div>
+                                <div class="col-9">
+                                    <div class="input-group-desc">
+                                        <input class="input--style-5" type="text" name="Phone">
+                                        <label class="label--desc">Phone Number</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div>
+                        <button class="btn btn--radius-2 btn--red" type="submit">Post Now</button>
+                        <button class="btn btn--radius-2 btn--red" type="submit">Back</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

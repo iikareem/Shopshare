@@ -1,23 +1,22 @@
 const express = require('express');
 const router = express.Router();
 const ProductsController = require('../Controller/ProductController');
-const DashboardController = require('../Controller/DashboardController');
+const AuthController = require('../Controller/AuthController');
+
+// http://127.0.0.1:5000/catalog
+
+router.get('/',AuthController.protect, ProductsController.Catalog); // CATALOG PAGE DESIGN
 
 
-router.get('/catalog',ProductsController.Catalog); // CATALOG PAGE DESIGN
+router.get('/:Category',AuthController.protect ,ProductsController.CatalogCategory); // CATALOG PAGE DESIGN But By Category
 
 
-router.get('/catalog/:Category',ProductsController.CatalogCategory); // CATALOG PAGE DESIGN
-
-
-router.get('/Product_Detail/:id',ProductsController.ProductDetail); // Product Detail PAGE DESIGN
-
-
-router.get('/Add_Product',ProductsController.AddProduct); // // Add Product PAGE DESIGN
+router.get('/Detail/:id',AuthController.protect ,ProductsController.ProductDetail); // Product Detail PAGE DESIGN
 
 
 
-router.post('/product/add',ProductsController.AddProductToDataBase); // ADD PRODUCT TO DATABASE
+
+
 
 
 

@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-commerce website</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Leckerli+One&family=Montserrat:wght@300;400;500;600;800;900&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+</head>
+<body>
+
+<header>
+    <a href="#" class="logo">
+        <img src="img/OIP.jpeg"  >
+    </a>
+
+        <ul class="navbar">
+            <li> <a href="/home">Home</a></li>
+            <li> <a href="/login">Login</a></li>
+            <li> <a href="/register">Register</a></li>
+            <li> <a href="/catalog">Products</a></li>
+            <li> <a href="/ContactUs">Contact Us</a></li>
+            <li> <a href="/AboutUs">About us</a></li>
+
+        </ul>
+
+        <div class="h-icons">
+            <a href="wishlist.html"><i class='bx bx-heart'></i></a>
+            <a href="/dashboard"><img src="img/setting.png" alt="Settings" style="width: 28px; height: 28px; margin-left: -10px;"></a>
+            <a href="/signout"><i class='bx bx-log-out'></i></a>
+
+            <a href="#" id="search-btn"><i class="bx bx-search-alt-2"></i></a>
+            <div class="search-form">
+                <input type="search" id="search-box" placeholder="Search here...">
+            </div>
+
+            <a href="#"><i class='bx bx-plus-medical'></i></a>
+        </div>
+
+
+
+
+</header>
+
+<section class="home">
+
+
+    <div class="slideshow-container">
+        <div class="mySlides fade">
+            <div class="numbertext1"></div>
+            <img src="https://img.freepik.com/free-photo/clothing-store-assistant-helping-customer-choosing-shirt-shopping-mall-apparel-department-fashion-boutique-african-american-woman-showing-trendy-garment-man-client_482257-61597.jpg?w=1060&t=st=1683843840~exp=1683844440~hmac=5f54fea3e1adf660034b826c9e5f51cd161b1e1659b0f723467123064e38f843" style="width:100%">
+            <div class="caption">
+                <h2>Everything at Your Fingertips: New & Used</h2>
+                <a href="#" class="btn">Shop Now</a>
+            </div>
+        </div>
+
+        <div class="mySlides fade">
+            <div class="numbertext"></div>
+            <img src="https://img.freepik.com/free-photo/close-up-people-holding-shopping-bags_23-2149241356.jpg?w=1060&t=st=1683843972~exp=1683844572~hmac=727f2735dd698f680b7809831097493dbe83e39db142a0f9e6588737797bb4b0" style="width:100%">
+            <div class="caption">
+                <h2>Everything at Your Fingertips: New & Used</h2>
+                <a href="#" class="btn">Shop Now</a>
+            </div>
+        </div>
+
+        <div class="mySlides fade">
+            <div class="numbertext"></div>
+            <img src="img/OuTVS6.webp" style="width:100%">
+            <div class="caption">
+                <h2>Everything at Your Fingertips: New & Used</h2>
+                <a href="#" class="btn">Shop Now</a>
+            </div>
+        </div>
+
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+        <br>
+
+
+    </div>
+
+    <div style="text-align:center">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+    </div>
+
+</section>
+
+
+</section>
+<section id="bannerid" class="banner">
+    <div class="banner-img">
+        <img src="https://img.freepik.com/premium-psd/ramadan-sale-banner-template_106244-2041.jpg?size=626&ext=jpg&ga=GA1.2.1182245659.1683846990&semt=sph">
+    </div>
+
+    <div class="banner-img">
+        <img src="https://img.freepik.com/free-vector/flat-horizontal-banner-template-monsoon-season-sales_23-2150412380.jpg?w=1380&t=st=1683843477~exp=1683844077~hmac=ed2be611628994791baa79b3e419d36c1904b032824987b52425baa682c4a68f">
+    </div>
+    <div class="banner-img">
+        <img src="https://img.freepik.com/free-vector/hand-drawn-supermarket-webinar-template_23-2150393558.jpg?w=1060&t=st=1683843669~exp=1683844269~hmac=e90468bebeeba2b538333c06fb8e395f9e516357320568dfb36f98fd7fdb0723">
+    </div>
+</section>
+
+
+<section class="new product">
+    <div class="center-text">
+        <h2>New Arrival Items</h2>
+
+
+    <%- body %>
+  
+
+
+</section>
+
+
+<section class="newsletter">
+    <div class="newsletter-content">
+        <h4>Sign up for Newsletters</h4>
+        <p>Get email updates about our latest shop and <span>special offers.</span></p>
+        <form class="newsletter-form">
+            <input type="email" placeholder="Enter your email address">
+            <button type="submit">Subscribe</button>
+        </form>
+    </div>
+</section>
+
+
+
+
+    <div class="chat-bar-collapsible">
+        <button id="chat-button" type="button" class="collapsible">Live Helper Chat
+            <i id="chat-icon" style="color: #fff;" class="fa fa-fw fa-comments-o"></i>
+        </button>
+
+        <div class="content">
+            <div class="full-chat-block">
+                <!-- Message Container -->
+                <div class="outer-container">
+                    <div class="chat-container">
+                        <!-- Messages -->
+                        <div id="chatbox">
+                            <h5  style="color: white" id="chat-timestamp"></h5>
+                            <p id="botStarterMessage" class="botText"><span>Loading...</span></p>
+                        </div>
+
+                        <!-- User input box -->
+                        <div class="chat-bar-input-block">
+                            <div id="userInput">
+                                <input id="textInput" class="input-box" type="text" name="msg"
+                                       placeholder="Tap 'Enter' to send a message">
+                                <p></p>
+                            </div>
+
+                            <div class="chat-bar-icons">
+                                <i  style="color: crimson;" class="fa fa-fw fa-heart"
+                                    onclick="heartButton()"></i>
+
+                            </div>
+                        </div>
+
+                        <div id="chat-bar-bottom">
+                            <p></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <main>
+        <!-- Content -->
+    </main>
+
+    <footer class="footer">
+        <div class="footer__addr">
+            <h1 class="footer__logo"><img src="img/OIP.jpeg" height="60px" ></h1>
+
+            <h2>Contact</h2>
+
+            <address>
+                Address : Smouha, Alex, Egypt <br>
+
+            </address>
+            <address>
+                phone : +20 012345678910 <br>
+
+            </address>
+        </div>
+
+        <ul class="footer__nav">
+            <li class="nav__item">
+                <h2 class="nav__title">MY ACCOUNT</h2>
+
+                <ul class="nav__ul">
+                    <li>
+                        <a href="#"> checkout</a>
+                    </li>
+
+                    <li>
+                        <a href="#">Order tracking</a>
+                    </li>
+
+                    <li>
+                        <a href="#">Shopping cart</a>
+                    </li>
+
+                    <li>
+                        <a href="#">Wishlist</a>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="nav__item">
+                <h2 class="nav__title">INFORMATION</h2>
+
+                <ul class="nav__ul">
+                    <li>
+                        <a href="#">Shipping policy</a>
+                    </li>
+
+                    <li>
+                        <a href="#">About us</a>
+                    </li>
+
+                    <li>
+                        <a href="#">Careers</a>
+                    </li>
+
+                    <li>
+                        <a href="#">Delivery information</a>
+                    </li>
+                </ul>
+            </li>
+            </li>
+
+            <li class="nav__item">
+                <h2 class="nav__title">Customers service</h2>
+
+                <ul class="nav__ul">
+                    <li>
+                        <a href="#">FAQa</a>
+                    </li>
+
+                    <li>
+                        <a href="#">Terms of Use</a>
+                    </li>
+
+                    <li>
+                        <a href="#">Returns & refunds</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+
+        <div class="legal">
+            <p>&copy; 2019 Something. All rights reserved.</p>
+
+        </div>
+    </footer>
+
+
+
+
+
+
+    <script src="main.js">
+        //$("button").click(function(){
+        //    $("#ooo").hide(1000);
+        //});$("#flip").click(function(){
+
+
+
+
+
+        $("button").click(function(){
+            $("#ooo").fadeToggle(3000);
+        });
+        $("#search-btn").click(function(){
+            $("#search-box").hide(3000);
+        });
+    </script>
+    <script src="chat.js"></script>
+    <script src="responses.js"></script>
+</body>
+</html>

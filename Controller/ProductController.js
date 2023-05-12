@@ -1,25 +1,41 @@
-const PRODUCT = require('../Database/ProductSchema');
+const PRODUCT = require('../Model/ProductSchema');
 const mongoose = require("mongoose");
+const path = require('path');
+const socket = require('socket.io');
 
 
 exports.Catalog = async (req,res) => {
+    // pagination
+    const FirstName= req.user.first_name;
     let perPage = 8;
     let page = req.query.page || 1;
-
     try {
-
         PRODUCT.aggregate([
-            {$sort: {createdAt: 1}},
+            {$project: {
+                    Ad_Title: {$substr: ["$Ad_Title", 0, 20]},
+                    Product_Price: {$substr: ["$Product_Price", 0, 100 ]},
+                    Electronics: {$substr: ["$Phone", 0, 100]},
+                    Category: {$substr: ["$Category", 0, 30]},
+                    Description: {$substr: ["$Description", 0, 60]},
+                    IMAGE_LABEL: {$substr: ["$IMAGE_LABEL", 0, 200]},}
+            } // { $sort: { createdAt: -1 }}
         ])
-            // 8 * 2 - 8 = 8
+
+            // 8 * 1 - 8 = 0
             .skip(perPage * page - perPage)
             .limit(perPage) // 8
             .exec(function (err, Products) {
-                    res.render("ProductCatalog_Content", { // content
-                        Products,
-                        layout: "../views/layout/ProductsCatalog_Layout", // layout
+
+            console.log(Products);
+
+
+        res.render("ProductsContent/ProductCatalog_Content", { // content
+        Products,
+            FirstName,
+        layout: "../views/layout/ProductsCatalog_Layout",  // layout
                 });
             });
+
 
     } catch (err) {
         console.log(err);
@@ -27,11 +43,14 @@ exports.Catalog = async (req,res) => {
 };
 
 exports.CatalogCategory = async (req,res) =>{
+
+    const FirstName= req.user.first_name;
     const Products = await PRODUCT.find({Category : req.params.Category});
 
     try {
-        res.render("ProductCatalog_Content", { // content
+        res.render("ProductsContent/ProductCatalog_Content", { // content
             Products,
+            FirstName,
             layout: "../views/layout/ProductsCatalog_Layout", // layout
         });
     }
@@ -42,11 +61,13 @@ exports.CatalogCategory = async (req,res) =>{
 }
 
 exports.ProductDetail = async (req,res) => {
+
+    // console.log( req.params);
     const Product = await PRODUCT.findById({_id: req.params.id})
         .lean();
 
     if (Product) {
-        res.render('ProductDetails_Content', {
+        res.render('ProductsContent/ProductDetails_Content', {
             Product,
             layout: '../views/layout/Product_Details_Layout'
         })
@@ -57,7 +78,7 @@ exports.ProductDetail = async (req,res) => {
 }
 
 exports.AddProduct = async (req,res) => {
-    res.render('AddProduct_Content', { // content
+    res.render('ProductsContent/AddProduct_Content', { // content
         layout: '../views/layout/AddProduct_Layout' // page design
     })
 }
@@ -65,9 +86,9 @@ exports.AddProduct = async (req,res) => {
 
 exports.AddProductToDataBase = async (req,res) => {
 try {
-    await PRODUCT.create(req.body)
-    console.log(req.body);
-    res.redirect("/catalog");
+    // console.log(req.body)
+    await PRODUCT.create(req.body);
+    res.redirect("/Catalog");
 }
 catch (error) {
     // console.log(req.body);
@@ -75,5 +96,13 @@ catch (error) {
 }
 
 }
+
+
+exports.Chatting = async (req,res) => {
+    res.sendFile(path.join(__dirname, '../public/Chat/index.html'));
+
+}
+
+
 
 

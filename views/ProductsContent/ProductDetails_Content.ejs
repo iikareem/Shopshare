@@ -1,0 +1,72 @@
+<div class="container mt-5 mb-5">
+        <div class="card">
+
+           <div class="row g-0">
+              <div class="col-md-6 border-end">
+                 <div class="d-flex flex-column justify-content-center">
+                    <div class="main_image">	<img src="<%= Product.IMAGES_Slide1 %>" id="main_product_image" width="450">	</div>
+                    <div class="thumbnail_images">
+                       <ul id="thumbnail">
+                          <li><img onclick="changeImage(this)" src="<%=Product.IMAGES_Slide1%>" width="100" height="70"></li>
+                          <li><img onclick="changeImage(this)" src="<%=Product.IMAGES_Slide2%>" width="100" height="70"></li>
+                          <li><img onclick="changeImage(this)" src="<%=Product.IMAGES_Slide3%>" width="100" height="70"></li>
+                       </ul>
+                    </div>
+                 </div>
+              </div>
+              <div class="col-md-6">
+                 <div class="p-3 right-side">
+                    <div class="d-flex justify-content-between align-items-center">
+                       <h3><%=Product.Ad_Title%></h3>
+                       <span class="heart"><i class='bx bx-heart'></i></span>
+
+                    </div>
+                    <hr>
+                    <h5 class="mt"
+                    >Product by <a href="javascript:void(0);"><%=Product.user%></a></h5>
+                    <hr>
+
+
+
+                     <h3>E£<%=Product.Product_Price%> <small style="font-size: 15px;">*includes tax</small></h3>
+
+                    <div class="d-flex flex-row">	<i class='bx bxs-star' ></i>	<i class='bx bxs-star' ></i>	<i class='bx bxs-star' ></i>	<i class='bx bxs-star' ></i>	<i class='bx bx-star' ></i>	</div>
+
+                   <br>
+                    <h5>Description</h5>
+                    <p> <%=Product.Description%></p>
+
+
+                    <h5>Specifications</h5>
+                    <p>
+                        <%=Product.Specifications%>
+                    </p>
+
+                     <br>
+
+                     <div class="certified">
+                        <ul>
+                        <li>
+                        <a href="javascript:void(0);">Trusted<span>Seller account is trusted</span></a>
+                        </li>
+                        <li>
+                        <a href="javascript:void(0);">Certified<span>Quality Assured</span></a>
+                        </li>
+                        </ul>
+                        </div>
+
+
+
+
+
+                    <div class="buttons d-flex flex-row mt-5 gap-3">	<button onclick="window.location.href='/ChatNow'" class="btn btn-outline-dark">Chat With Seller</button>	<button onclick="window.location.href='/catalog'"  class="btn btn-dark">Back</button>	</div>
+                    <div class="search-option">
+                       <i class='bx bx-search-alt-2 first-search'></i>
+                       <div class="inputs">	<input type="text" name="">	</div>
+                       <i class='bx bx-share-alt share'></i>
+                    </div>
+                 </div>
+              </div>
+           </div>
+        </div>
+     </div>
