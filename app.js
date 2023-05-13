@@ -46,7 +46,7 @@ app.set('view engine', 'ejs');
 
 
 // Rawan
-app.use('/Home',HomeRoute);
+app.use('/',HomeRoute);
 app.use('/AboutUs',AboutRoute);
 app.use('/Contactus',ContactRoute);
 

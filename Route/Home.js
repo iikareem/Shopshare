@@ -4,7 +4,7 @@ const HomeController = require('../Controller/HomeController');
 
 
 
-router.get('',HomeController.Home); // Home PAGE DESIGN
+router.get('/',HomeController.Home); // Home PAGE DESIGN
 
 
 

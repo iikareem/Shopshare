@@ -33,6 +33,7 @@ const createSendToken = (user,statusCode,res) =>{
 
 }
 
+
 exports.signup = async (req, res, next) => {
 
     try{
@@ -58,7 +59,7 @@ exports.login = async (req,res,next) =>{
 
     try {
         const {email,password} = req.body;
-        console.log(req.body);
+        // console.log(req.body);
 
         // If email or password doesnt exist
         if (!email || !password){
@@ -106,7 +107,7 @@ exports.login = async (req,res,next) =>{
             });
         }
 
-        return res.redirect('/home');
+        return res.redirect('/');
     }
     catch (err){
         res.status(404).json({
@@ -148,7 +149,7 @@ exports.protect = async (req, res, next) => {
 
 
 
-    console.log(currentUser);
+    // console.log(currentUser);
 
     if (!currentUser) {
         return fs.readFile('public/error/NotSignedIn.html', (err, data) => {
@@ -201,7 +202,7 @@ exports.restrictTo = (...roles) =>{
 exports.SignOut = async (req, res, next) => {
 
     res.clearCookie('jwt');
-    res.redirect('/home');
+    res.redirect('/');
 
 };
 

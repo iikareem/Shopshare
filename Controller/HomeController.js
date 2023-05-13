@@ -9,10 +9,10 @@ const fs = require('fs');
 exports.Home = async (req,res) => {
 
     try{
-        console.log("HI")
+        // console.log("HI")
         const Products = await PRODUCT.find();
 
-            console.log(Products);
+            // console.log(Products);
             res.render("HomePage/HomeContent", { // content
             Products,
              layout: "HomePage/HomeLayout",  // layout

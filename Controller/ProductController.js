@@ -87,7 +87,20 @@ exports.AddProduct = async (req,res) => {
 exports.AddProductToDataBase = async (req,res) => {
 try {
     // console.log(req.body)
-    await PRODUCT.create(req.body);
+    await PRODUCT.create({
+        user: req.user.first_name,
+        Ad_Title: req.body.Ad_Title,
+        Brand: req.body.Brand,
+        Category: req.body.Category,
+        Description : req.body.Description,
+        Specifications : req.body.Specifications,
+        IMAGE_LABEL : req.body.IMAGE_LABEL,
+        IMAGES_Slide1 : req.body.IMAGES_Slide1,
+        IMAGES_Slide2 : req.body.IMAGES_Slide2,
+        IMAGES_Slide3 : req.body.IMAGES_Slide3,
+        Product_Price : req.body.Product_Price,
+        Phone : req.body.Phone
+    });
     res.redirect("/Catalog");
 }
 catch (error) {
