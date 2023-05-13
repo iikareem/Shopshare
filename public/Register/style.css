@@ -1,0 +1,19 @@
+body{
+  background: linear-gradient(90deg, hsla(52, 43%, 55%, 1) 0%, hsla(51, 33%, 75%, 1) 100%);
+
+
+
+}
+.login-form{
+          padding: 20px ; 
+          max-width: 60ch;
+          margin-left : auto; 
+          margin-right: auto;
+          background-color: white;
+        
+            border-radius: 20px;
+            background-color: light-gray;
+            padding : 10 px   20px;
+            margin-top: 50px;
+          
+        }
