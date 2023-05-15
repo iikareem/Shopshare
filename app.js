@@ -45,26 +45,18 @@ app.set('view engine', 'ejs');
 
 
 
-// Rawan
+
 app.use('/',HomeRoute);
 app.use('/AboutUs',AboutRoute);
 app.use('/Contactus',ContactRoute);
-
-
-// Andrew
 app.use('/Register',RegisterRoute);
 app.use('/Login',LoginRoute);
 
-
 app.use('/Signout',SignOutRoute);
-
-
-
 app.use('/Catalog',ProductsRoute);
 app.use('/Add-Product',AddRoute);
 app.use('/ChatNow',ChatRoute);
 app.use('/Dashboard',DashboardRoute);
-app.use('/User',UsersRoute);
 
 
 SetupSocket(server);

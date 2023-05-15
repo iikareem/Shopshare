@@ -4,7 +4,7 @@ const ProductsController = require("../Controller/ProductController");
 
 
 
-router.get('/',ProductsController.Chatting); // // Add Product PAGE DESIGN
+router.get('/',ProductsController.Chatting); // // Chat PAGE DESIGN
 
 
 

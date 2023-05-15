@@ -9,19 +9,27 @@ const fs = require('fs');
 exports.Home = async (req,res) => {
 
     try{
-        // console.log("HI")
+        let user;
         const Products = await PRODUCT.find();
+        const ProductsNumber = await PRODUCT.count();
 
-            // console.log(Products);
+        if (req.user){
+             user = req.user.Full_Name;
+        }
+        else {
+            user = undefined;
+        }
+
             res.render("HomePage/HomeContent", { // content
             Products,
+                ProductsNumber,
+              user,
              layout: "HomePage/HomeLayout",  // layout
             });
 
 
     }
     catch (err){
-
     }
 
 
@@ -29,28 +37,37 @@ exports.Home = async (req,res) => {
 
 
 exports.AboutUs = async (req,res) => {
+    let user;
+    if (req.user){
+        user = req.user.Full_Name;
+    }
+    else {
+        user = undefined;
+    }
 
-    fs.readFile('public/About/Aboutus.html', (err, data) => {
-        if (err) {
-            res.statusCode = 500;
-            res.end('Internal Server Error');
-        } else {
-            res.setHeader('Content-Type', 'text/html');
-            res.end(data);
-        }
+    res.render("HomePage/AboutContact/AboutContent", { // content
+        user,
+        layout: "HomePage/AboutContact/AboutContactLayout",  // layout
     });
 
 }
 
 exports.Contactus = async (req,res) => {
-    fs.readFile('public/Contact_us/Contactus.html', (err, data) => {
-        if (err) {
-            res.statusCode = 500;
-            res.end('Internal Server Error');
-        } else {
-            res.setHeader('Content-Type', 'text/html');
-            res.end(data);
-        }
+
+
+    let user;
+    if (req.user){
+        user = req.user.Full_Name;
+    }
+    else {
+        user = undefined;
+    }
+
+    res.render("HomePage/AboutContact/ContactContent", { // content
+        user,
+        layout: "HomePage/AboutContact/AboutContactLayout",  // layout
     });
+
+
 
 }

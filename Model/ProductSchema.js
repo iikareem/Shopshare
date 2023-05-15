@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
 const ProductSchema = new Schema({
+    // El Key w Type el value
     user: {
         type: String,
         default: "UNKNOWN"
@@ -60,4 +61,4 @@ const ProductSchema = new Schema({
 }, {collection: 'Products'});
 
 module.exports = mongoose.model('Products', ProductSchema);
-
+// to access it in controller

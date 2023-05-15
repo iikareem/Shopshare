@@ -6,7 +6,7 @@ const socket = require('socket.io');
 
 exports.Catalog = async (req,res) => {
     // pagination
-    const FirstName= req.user.first_name;
+    const FirstName= req.user.Full_Name;
     let perPage = 8;
     let page = req.query.page || 1;
     try {
@@ -88,7 +88,7 @@ exports.AddProductToDataBase = async (req,res) => {
 try {
     // console.log(req.body)
     await PRODUCT.create({
-        user: req.user.first_name,
+        user: req.user.Full_Name,
         Ad_Title: req.body.Ad_Title,
         Brand: req.body.Brand,
         Category: req.body.Category,

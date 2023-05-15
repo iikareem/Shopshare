@@ -11,9 +11,9 @@
                         <thead>
                         <tr>
                             <th class="border-top-0">#</th>
-                            <th class="border-top-0">First Name</th>
-                            <th class="border-top-0">Last Name</th>
-                            <th class="border-top-0">Username</th>
+                            <th class="border-top-0">Full Name</th>
+                            <th class="border-top-0">Phone</th>
+                            <th class="border-top-0">Address</th>
                             <th class="border-top-0">Role</th>
                             <th class="border-top-0">Status</th>
                             <th class="border-top-0"></th>
@@ -23,30 +23,12 @@
                         </tr>
                         </thead>
                         <tbody>
+
                         <tr>
                             <td>1</td>
-                            <td>Andrew</td>
-                            <td>Victor</td>
-                            <td>@Andrew</td>
-                            <td>Admin</td>
-                            <td>Available</td>
-
-                        </tr>
-
-                        <tr>
-                            <td>2</td>
-                            <td>Rawan</td>
-                            <td>Ayman</td>
-                            <td>@Rawan</td>
-                            <td>Admin</td>
-                            <td>Available</td>
-
-                        </tr>
-                        <tr>
-                            <td>3</td>
                             <td>Kareem</td>
-                            <td>Ashraf</td>
-                            <td>@iikareem</td>
+                            <td>1552109303</td>
+                            <td>Alexandria</td>
                             <td>Admin</td>
                             <td>Available</td>
 
@@ -54,13 +36,13 @@
 
 
                         <% if (Users.length > 0) { for(var i=0; i < Users.length; i++) { %>
-                            <% if (Users[i].first_name !== "Kareem" && Users[i].first_name !== "Andrew" && Users[i].first_name !== "Rawan") {%>
+                            <% if (Users[i].Full_Name !== "Kareem Ashraf") {%>
                         <tr>
-                            <td><%=i+4%></td>
-                            <td><%=Users[i].first_name%></td>
-                            <td><%=Users[i].last_name%></td>
-                            <td>@<%=Users[i].username%></td>
-                            <td>Member</td>
+                            <td></td>
+                            <td><%=Users[i].Full_Name%></td>
+                            <td><%=Users[i].Phone%></td>
+                            <td><%=Users[i].address%></td>
+                            <td><%=Users[i].role%></td>
                             <%    if(Users[i].status===true){     %>
 
                              <td>Available</td>

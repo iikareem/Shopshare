@@ -10,7 +10,7 @@ exports.MainDashboard = async (req,res) => {
         let Dashboard = "MainDashboard";
         let Products = await PRODUCT.aggregate([
             {$project: {
-                    user: {$substr: ["$user", 0, 10]},
+                    user: {$substr: ["$user", 0, 20]},
                     Ad_Title: {$substr: ["$Ad_Title", 0, 50 ]},
                     Phone: {$substr: ["$Phone", 0, 20]},
                     Product_Price: {$substr: ["$Product_Price", 0, 15]},

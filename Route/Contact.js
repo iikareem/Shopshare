@@ -4,7 +4,7 @@ const AuthController = require('../Controller/AuthController');
 const HomeController = require('../Controller/HomeController');
 
 
-router.get('/',HomeController.Contactus); // Register PAGE DESIGN
+router.get('/',AuthController.welcome,HomeController.Contactus); // Contact us PAGE DESIGN
 
 
 module.exports = router;

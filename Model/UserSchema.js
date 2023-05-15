@@ -4,17 +4,9 @@ const validator = require('validator');
 const crypto = require('crypto');
 
 const userSchema = new mongoose.Schema({
-    first_name: {
+    Full_Name: {
         type: String,
         required: [true, 'Please tell us your first name!']
-    },
-    last_name: {
-        type: String,
-        required: [true, 'Please tell us your last name!']
-    },
-    username: {
-        type: String,
-        required: [true, 'Please tell us your username!']
     },
     Phone: {
         type: Number,
@@ -35,12 +27,6 @@ const userSchema = new mongoose.Schema({
     address : {
         type : String
     },
-    city : {
-        type : String
-    },
-    zip : {
-        type : Number
-    },
     password: {
         type: String,
         required: [true, 'Please provide a password'],
@@ -51,7 +37,7 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: [true, 'Please confirm your password'],
         validate: {
-            // This only works on CREATE and SAVE!!!
+            //  only works on CREATE and SAVE Dont Forgeeeeeeet !!!!!!!
             validator: function(el) {
                 return el === this.password;
             },
@@ -77,12 +63,7 @@ userSchema.pre('save', async function(next){
 
 });
 
-// hena ay user ykon false ma ynf3 any a3ml lih import aw get 3shan hewa a5ed block
-// userSchema.pre(/^find/,function(next){
-//
-//     this.find({status : { $ne: false }});
-//     next();
-// });
+
 
 // hena ana b3ml compare between el plaintext ely da5lha el user wel hashedpassword ely fel database we brg3
 // leh true or false

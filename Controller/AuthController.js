@@ -18,7 +18,7 @@ const createSendToken = (user,statusCode,res) =>{
     try {
         const token = signToken(user._id);
         const cookieOption = {
-            expires : new Date(Date.now() + process.env.JWT_COOKIE_EXPIRES_IN * 24 * 60 * 60 * 1000),
+            expires : new Date(Date.now() + process.env.JWT_COOKIE_EXPIRES_IN * 1 * 60 * 60 * 1000),
             httpOnly : true
         }
         //  cookieOption.secure = true;
@@ -39,7 +39,15 @@ exports.signup = async (req, res, next) => {
     try{
 
         console.log(req.body);
-        const newUser = await User.create(req.body);
+
+        const newUser = await User.create({
+            email : req.body.email,
+            Full_Name : req.body.Full_Name,
+            password : req.body.password,
+            passwordConfirm : req.body.passwordConfirm,
+            Phone: req.body.Phone,
+            address : req.body.address
+        });
 
         createSendToken(newUser,201,res);
         res.redirect('/login');
@@ -59,7 +67,7 @@ exports.login = async (req,res,next) =>{
 
     try {
         const {email,password} = req.body;
-        // console.log(req.body);
+         console.log(req.body);
 
         // If email or password doesnt exist
         if (!email || !password){
@@ -92,21 +100,18 @@ exports.login = async (req,res,next) =>{
 
 
         if (!user.status){
-
             return fs.readFile('public/error/Blocked.html', (err, data) => {
                 if (err) {
-                    // Handle the error if the file couldn't be read
                     res.statusCode = 500;
                     res.end('Internal Server Error');
                 } else {
-                    // Set the response header
                     res.setHeader('Content-Type', 'text/html');
-                    // Send the HTML content
                     res.end(data);
                 }
             });
         }
 
+        req.user = user;
         return res.redirect('/');
     }
     catch (err){
@@ -128,13 +133,10 @@ exports.protect = async (req, res, next) => {
     if (!cookieValue) {
         return fs.readFile('public/error/NotSignedIn.html', (err, data) => {
             if (err) {
-                // Handle the error if the file couldn't be read
                 res.statusCode = 500;
                 res.end('Internal Server Error');
             } else {
-                // Set the response header
                 res.setHeader('Content-Type', 'text/html');
-                // Send the HTML content
                 res.end(data);
             }
         });
@@ -154,23 +156,17 @@ exports.protect = async (req, res, next) => {
     if (!currentUser) {
         return fs.readFile('public/error/NotSignedIn.html', (err, data) => {
             if (err) {
-                // Handle the error if the file couldn't be read
                 res.statusCode = 500;
                 res.end('Internal Server Error');
             } else {
-                // Set the response header
                 res.setHeader('Content-Type', 'text/html');
-                // Send the HTML content
                 res.end(data);
             }
         });
     }
 
 
-    // GRANT ACCESS TO PROTECTED ROUTE
-    // req.user property is commonly used to store information about the currently authenticated user.
-    // By assigning the value of currentUser to req.user,
-    // the application is indicating that the user associated with the current request is currentUser.
+
     req.user = currentUser;
 
 
@@ -183,13 +179,10 @@ exports.restrictTo = (...roles) =>{
         if (!roles.includes(req.user.role)){
             return fs.readFile('public/error/Restricted.html', (err, data) => {
                 if (err) {
-                    // Handle the error if the file couldn't be read
                     res.statusCode = 500;
                     res.end('Internal Server Error');
                 } else {
-                    // Set the response header
                     res.setHeader('Content-Type', 'text/html');
-                    // Send the HTML content
                     res.end(data);
                 }
             });
@@ -200,17 +193,40 @@ exports.restrictTo = (...roles) =>{
 
 
 exports.SignOut = async (req, res, next) => {
-
     res.clearCookie('jwt');
     res.redirect('/');
 
 };
 
-exports.CheckBlocked = async (req, res, next) => {
+
+exports.welcome = async (req, res, next) => {
+
+    // 1) Getting token and check of it's there
+    if (req.cookies && req.cookies.jwt) {
+        const cookieValue = req.cookies.jwt;
+
+        // 2) Verification token
+        // PAYLOAD: DATA
+        const decoded = await promisify(jwt.verify)(cookieValue, process.env.JWT_SECRET);
+
+
+        const currentUser = await User.findById(decoded.id);
+
+
+        req.user = currentUser;
+
+
+        next();
+
+    } else {
+        req.user = undefined;
+        next();
+    }
 
 
 
 };
+
 
 
 

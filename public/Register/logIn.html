@@ -2,44 +2,67 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sign Up Form by Colorlib</title>
 
-    <title>Log in page</title>
+    <!-- Font Icon -->
+    <link rel="stylesheet" href="Register/fonts/material-icon/css/material-design-iconic-font.min.css">
+
+    <!-- Main css -->
+    <link rel="stylesheet" href="Register/css/style.css">
 </head>
 <body>
-<section class="vh-100" style="background-color: #508bfc;">
-    <div class="container py-5 h-100">
-        <div class="row d-flex justify-content-center align-items-center h-100">
-            <div class="col-12 col-md-8 col-lg-6 col-xl-5">
-                <div class="card shadow-2-strong" style="border-radius: 1rem;">
-                    <div class="card-body p-5 text-center">
 
-                        <h3 class="mb-5">Sign in</h3>
+    <div class="main">
 
-                        <form class="form-outline mb-4" method="post" action="/login">
-                            <input type="email" class="form-control mb-3" placeholder="Enter your email" id="inputEmail" name="email" required>
-                            <input type="password" class="form-control" id="inputPassword" name="password" placeholder="Enter your password" required>
+    
 
-                            <!-- Checkbox -->
-                            <div class="form-check d-flex justify-content-start mb-4" style="margin-top: 20px;">
-                                <input class="form-check-input" type="checkbox" value="" id="form1Example3" />
-                                <label class="form-check-label" for="form1Example3"> Remember password </label>
+        <!-- Sing in  Form -->
+        <section class="sign-in">
+            <div class="container">
+                <div class="signin-content">
+                    <div class="signin-image">
+                        <figure><img src="Register/images/signin-image.jpg" alt="sing up image"></figure>
+                        <a href="/register" class="signup-image-link">Create an account</a>
+                    </div>
+
+                    <div class="signin-form">
+                        <h2 class="form-title">Sign In</h2>
+                        <form method="POST" class="register-form" action="/login" id="login-form">
+                            <div class="form-group">
+                                <label for="your_name"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                                <input type="text" name="email" id="your_name" placeholder="Your Name"/>
                             </div>
-
-                            <button class="btn btn-primary btn-lg btn-block" type="submit">Login</button>
-
-                            <hr class="my-4">
-
-                            Don't have an account? click <a href="register">Here</a>
+                            <div class="form-group">
+                                <label for="your_pass"><i class="zmdi zmdi-lock"></i></label>
+                                <input type="password" name="password" id="your_pass" placeholder="Password"/>
+                            </div>
+                            <div class="form-group">
+                                <input type="checkbox" name="remember-me" id="remember-me" class="agree-term" />
+                                <label for="remember-me" class="label-agree-term"><span><span></span></span>Remember me</label>
+                            </div>
+                            <div class="form-group form-button">
+                                <input type="submit" name="signin" id="signin" class="form-submit" value="Log in"/>
+                            </div>
                         </form>
-
+                        <div class="social-login">
+                            <span class="social-label">Or login with</span>
+                            <ul class="socials">
+                                <li><a href="#"><i class="display-flex-center zmdi zmdi-facebook"></i></a></li>
+                                <li><a href="#"><i class="display-flex-center zmdi zmdi-twitter"></i></a></li>
+                                <li><a href="#"><i class="display-flex-center zmdi zmdi-google"></i></a></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
+
     </div>
-</section>
-</body>
+
+    <!-- JS -->
+    <script src="Register/vendor/jquery/jquery.min.js"></script>
+    <script src="Register/js/main.js"></script>
+</body>>
 </html>
