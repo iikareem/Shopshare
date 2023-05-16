@@ -1,7 +1,7 @@
 const PRODUCT = require('../Model/ProductSchema');
 const mongoose = require("mongoose");
 const path = require('path');
-const socket = require('socket.io');
+// const socket = require('socket.io');
 
 
 exports.Catalog = async (req,res) => {
