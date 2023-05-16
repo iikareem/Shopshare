@@ -16,7 +16,7 @@ const SetupSocket = require('./Utils/Chatting');
 const dotenv = require('dotenv');
 const mongoose = require('mongoose');
 dotenv.config({path: './config.env'});
-const socket = require('socket.io');
+// const socket = require('socket.io');
 const cookieParser = require('cookie-parser');
 const app = express();
 
@@ -58,7 +58,7 @@ app.use('/ChatNow',ChatRoute);
 app.use('/Dashboard',DashboardRoute);
 
 
-SetupSocket(server);
+// SetupSocket(server);
 
 
 
