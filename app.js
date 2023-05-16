@@ -51,7 +51,6 @@ app.use('/AboutUs',AboutRoute);
 app.use('/Contactus',ContactRoute);
 app.use('/Register',RegisterRoute);
 app.use('/Login',LoginRoute);
-
 app.use('/Signout',SignOutRoute);
 app.use('/Catalog',ProductsRoute);
 app.use('/Add-Product',AddRoute);
