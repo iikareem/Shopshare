@@ -12,17 +12,25 @@ By combining the power of Node.js, Express, MongoDB, RESTful APIs, MVC architect
 
 Interactive Customer Support: The chatbot acts as a virtual assistant, offering immediate responses to commonly asked questions and providing guidance to users. It assists customers in navigating the platform, finding products, understanding policies, and resolving basic inquiries.
 
-![Capture19](https://github.com/iikareem/Shopshare/assets/77942683/8a02ef2d-94e3-4ebf-8948-a40d0fb5dd84)
-
-![Capture4](https://github.com/iikareem/Shopshare/assets/77942683/3ca76e2a-dbba-48e1-947a-58b3f2459238)
-![Capture5](https://github.com/iikareem/Shopshare/assets/77942683/be5f3cdc-3c89-4d7a-8d09-7440fa510eab)
-![Capture8](https://github.com/iikareem/Shopshare/assets/77942683/27f83d8f-8e54-46e3-8195-66f6eccb254c)
-![Capture9](https://github.com/iikareem/Shopshare/assets/77942683/c576f9bf-0c67-4f73-8a39-1d0d015a47d2)
-![Capture10](https://github.com/iikareem/Shopshare/assets/77942683/d36284f8-210b-4c08-be96-2b8079bebef4)
+![Capture](https://github.com/iikareem/Shopshare/assets/77942683/ff1a4fc6-bd4c-45a2-ad20-c380b520bdd5)
 
 ![Capture2](https://github.com/iikareem/Shopshare/assets/77942683/a590297b-480e-4c15-91f6-19cddb75d17b)
+
 ![Capture3](https://github.com/iikareem/Shopshare/assets/77942683/ea5249f1-5e60-49ac-8e52-c7b6637635e1)
 
-![Capture](https://github.com/iikareem/Shopshare/assets/77942683/ff1a4fc6-bd4c-45a2-ad20-c380b520bdd5)
+![Capture4](https://github.com/iikareem/Shopshare/assets/77942683/3ca76e2a-dbba-48e1-947a-58b3f2459238)
+
+![Capture5](https://github.com/iikareem/Shopshare/assets/77942683/be5f3cdc-3c89-4d7a-8d09-7440fa510eab)
+
+![Capture8](https://github.com/iikareem/Shopshare/assets/77942683/27f83d8f-8e54-46e3-8195-66f6eccb254c)
+
+![Capture9](https://github.com/iikareem/Shopshare/assets/77942683/c576f9bf-0c67-4f73-8a39-1d0d015a47d2)
+
+![Capture10](https://github.com/iikareem/Shopshare/assets/77942683/d36284f8-210b-4c08-be96-2b8079bebef4)
+
+![Capture19](https://github.com/iikareem/Shopshare/assets/77942683/8a02ef2d-94e3-4ebf-8948-a40d0fb5dd84)
+
+
+
 
 
